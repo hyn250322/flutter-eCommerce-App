@@ -6,6 +6,9 @@ Widget ourButton({onPress, color, textColor,String? title}){
     style: ElevatedButton.styleFrom(
       backgroundColor: color,
       padding: EdgeInsets.all(12),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(0), // Không bo tròn
+      ),
 
     ),
       onPressed: onPress,

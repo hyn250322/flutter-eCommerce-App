@@ -10,6 +10,7 @@ const name = "Name";
 const nameHint = "Thien Huy";
 const forgetPass = "Forget Password";
 const login = "Login";
+const logout = "Log out";
 const signup = "Sign up";
 const createNewAccount = "or, create a new account";
 const loginWith = "Login with";
@@ -47,3 +48,16 @@ const womenClothing = "Women Clothing",
     jewelery = "Jewelery",
     cellphone = "Cellphone & Tab",
     furniture = "Furniture";
+
+//item details strings
+
+const video = "Video",
+    reviews = "Reviews",
+    sellerPolicy = "Seller Policy",
+    returnPolicy = "Return Policy",
+    supportPolicy = "Support Policy",
+    productsYouMayLike = "Products you may also like";
+
+//profile strings
+
+const wishlist = "My Wishlist", orders = "My Orders", message = "Messages";
