@@ -41,15 +41,16 @@ const searchanything = "Search anything...",
 
 //category strings
 
-const womenClothing = "Women Clothing",
-    menClothingFashion = "Men Clothing & Fashion",
-    compAccess = "Computer & Accessories",
-    automobile = "Automobile",
-    kidtoys = "Kids & Toys",
-    sports = "Sports",
-    jewelery = "Jewelery",
-    cellphone = "Cellphone & Tab",
-    furniture = "Furniture";
+const womenClothing = "Thời trang nữ",
+    menClothingFashion = "Thời trang nam",
+    compAccess = "Máy tính & Phụ kiện",
+    automobile = "Ô tô & Phương tiện",
+    kidtoys = "Đồ chơi & Trẻ em",
+    sports = "Thể thao",
+    jewelery = "Trang sức",
+    cellphone = "Điện thoại & Máy tính bảng",
+    furniture = "Nội thất";
+
 
 //item details strings
 
@@ -58,7 +59,7 @@ const video = "Video",
     sellerPolicy = "Seller Policy",
     returnPolicy = "Return Policy",
     supportPolicy = "Support Policy",
-    productsYouMayLike = "Products you may also like";
+    productsYouMayLike = "Sản phẩm tương tự";
 
 //profile strings
 

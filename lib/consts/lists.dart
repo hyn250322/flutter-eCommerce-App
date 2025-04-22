@@ -13,7 +13,7 @@ const featuredTitles1 = [womenDress, girlsDress, girlsWatches];
 const featuredTitles2 = [boysGlasses, mobilePhone, tShirts];
 
 const categoriesList = [
-  womenDress, menClothingFashion, compAccess, automobile, kidtoys, sports, jewelery, cellphone, furniture
+  womenClothing, menClothingFashion, compAccess, automobile, kidtoys, sports, jewelery, cellphone, furniture
 ];
 const categoriesImages = [
   imgS1,

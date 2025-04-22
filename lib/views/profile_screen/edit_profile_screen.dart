@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter_emart1/consts/consts.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_emart1/controllers/profile_controller.dart';
 import 'package:flutter_emart1/widgets_common/bg_widget.dart';
 import 'package:flutter_emart1/widgets_common/custom_textfield.dart';
