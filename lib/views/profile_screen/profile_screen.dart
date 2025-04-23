@@ -11,6 +11,7 @@ import 'package:flutter_emart1/views/profile_screen/components/details_card.dart
 import 'package:flutter_emart1/views/profile_screen/edit_profile_screen.dart';
 import 'package:flutter_emart1/widgets_common/bg_widget.dart';
 import 'package:get/get.dart';
+import 'package:flutter_emart1/views/wishlist_screen/wishlist_screen.dart';
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -108,7 +109,19 @@ class ProfileScreen extends StatelessWidget {
                                width: 22,
                              ),
                              title: profileButtonsList[index].text.fontFamily(semibold).color(darkFontGrey).make(),
-                           );
+                                onTap: () {
+                                    switch (index) {
+                                      case 0:
+                                      // Get.to(() => MyOrdersScreen());
+                                        break;
+                                      case 1:
+                                        Get.to(() => wishlistScreen());
+                                        break;
+                                      case 2:
+                                      // Get.to(() => MessageScreen());
+                                        break;
+                                    }
+                                  });
                          },
                        ).box.white.rounded.margin(EdgeInsets.all(12)).padding(const EdgeInsets.symmetric(horizontal: 16)).shadowSm.make().box.color(redColor).make(),
                      ],

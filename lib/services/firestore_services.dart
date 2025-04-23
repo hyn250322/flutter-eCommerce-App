@@ -33,4 +33,17 @@ class FirestoreServices {
       'tprice': totalPrice,
     });
   }
+
+  static getWishlist() {
+    return firestore
+        .collection(productsCollection)
+        .where('p_wishlist', arrayContains: currentUser!.uid)
+        .snapshots();
+  }
+
+  static allproducts() {
+    return firestore.collection(productsCollection).snapshots();
+
+  }
+
 }

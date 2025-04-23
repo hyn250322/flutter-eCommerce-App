@@ -20,6 +20,7 @@ class _ItemDetailsState extends State<ItemDetails> {
     // print(Colors.red.value);
     var controller = Get.find<ProductController>();
     controller.resetValues();
+    controller.checkIfFav(widget.data);
     return Scaffold(
       backgroundColor: lightGrey,
       appBar: AppBar(
@@ -30,9 +31,20 @@ class _ItemDetailsState extends State<ItemDetails> {
             onPressed: () {},
             icon: const Icon(Icons.share),
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.favorite_outline),
+          Obx(
+                () => IconButton(
+              onPressed: () {
+                if (controller.isFav.value) {
+                  controller.removeFromWishlist(widget.data.id, context);
+                } else {
+                  controller.addToWishlist(widget.data.id, context);
+                }
+              },
+              icon:  Icon(
+                Icons.favorite_outlined,
+                color: controller.isFav.value ? redColor : darkFontGrey
+              ),
+            ),
           ),
         ],
       ),

@@ -41,6 +41,7 @@ class CartController extends GetxController {
       firestore.collection(cartCollection).doc(doc.id).update({
         'qty': newQty,
         'tprice': totalPrice.toString(),
+
       });
     }
   }
