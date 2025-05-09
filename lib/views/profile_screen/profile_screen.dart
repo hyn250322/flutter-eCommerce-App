@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_emart1/controllers/auth_controller.dart';
 import 'package:flutter_emart1/controllers/profile_controller.dart';
 import 'package:flutter_emart1/services/firestore_services.dart';
-import 'package:flutter_emart1/views/auth_screen/login_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_emart1/consts/consts.dart';
@@ -77,7 +76,6 @@ class ProfileScreen extends StatelessWidget {
                                     ),
                                     onPressed: () async {
                                       await Get.put(AuthController()).signoutMethod(context);
-                                      Get.offAll(() => const LoginScreen());
                                     },
                                     child: logout.text.fontFamily(semibold).white.make(),
                                   )
