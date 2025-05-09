@@ -1,5 +1,4 @@
 import 'package:flutter_emart1/consts/consts.dart';
-import 'package:flutter_emart1/consts/images.dart';
 
 const socialIconList = [icFacebookLogo, icGoogleLogo, icTwitterLogo];
 
@@ -9,12 +8,13 @@ const secondSlidersList = [imgSs1, imgSs2, imgSs3, imgSs4];
 const featuredListImages1 = [imgS1, imgS2, imgS3];
 const featuredListImages2 = [imgS4, imgS5, imgS6];
 
-const featuredTitles1 = [womenDress, girlsDress, girlsWatches];
-const featuredTitles2 = [boysGlasses, mobilePhone, tShirts];
+const featuredTitles1 = [womenDress, handBag, womenTshirts];
+const featuredTitles2 = [officeWear, menPants, necklace];
 
 const categoriesList = [
-  womenClothing, menClothingFashion, compAccess, automobile, kidtoys, sports, jewelery, cellphone, furniture
+  womenClothingFashion, menClothingFashion, childrenClothingFashion, middleAgedFashion, jewelery, menAccessories, womenAccessories
 ];
+
 const categoriesImages = [
   imgS1,
   imgFc1,
@@ -23,11 +23,12 @@ const categoriesImages = [
   imgFc4,
   imgFc5,
   imgS11,
-  imgFc6,
-  imgFc9,
 ];
 
 const itemDetailButtonList = [video, reviews, privacyPolicy, returnPolicy, supportPolicy];
 
 const profileButtonsList = [orders, wishlist, message];
 const profileButtonsIcon = [icOrder, icHeart, icMessages];
+
+const paymentMethodsImg = [imgBankTransfer, imgCod];
+const paymentMethods = [bankTransfer, cod];

@@ -54,12 +54,16 @@ class AuthController extends GetxController {
     });
   }
 
-  //signout method
-  signoutMehod(context) async {
+  signoutMethod(context) async {
     try {
       await auth.signOut();
+      // Clear any cached user data if needed
+      currentUser = null;
+      // Return true to indicate successful logout
+      return true;
     } catch (e) {
       VxToast.show(context, msg: e.toString());
+      return false;
     }
   }
 

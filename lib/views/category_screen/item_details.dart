@@ -41,8 +41,8 @@ class _ItemDetailsState extends State<ItemDetails> {
                 }
               },
               icon:  Icon(
-                Icons.favorite_outlined,
-                color: controller.isFav.value ? redColor : darkFontGrey
+                  Icons.favorite_outlined,
+                  color: controller.isFav.value ? redColor : darkFontGrey
               ),
             ),
           ),
@@ -52,13 +52,13 @@ class _ItemDetailsState extends State<ItemDetails> {
         child: Column(
           children: [
             Expanded(
-                child: Padding(padding: const EdgeInsets.all(8),
+              child: Padding(padding: const EdgeInsets.all(8),
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       //swiper section
-        
+
                       VxSwiper.builder(
                           autoPlay: true,
                           height: 350,
@@ -93,20 +93,20 @@ class _ItemDetailsState extends State<ItemDetails> {
                           "${widget.data['p_rating']}".text.fontFamily(semibold).underline.color(darkFontGrey).make(),
                         ],
                       ),
-        
+
                       10.heightBox,
                       NumberFormat.currency(locale: 'vi_VN', symbol: '₫')
                           .format(int.parse(widget.data['p_price'])).text.color(redColor).fontFamily(bold).size(18).make(),
-        
+
                       10.heightBox,
-        
+
                       Row(
                         children: [
                           Expanded(child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              "Seller".text.white.fontFamily(semibold).make(),
+                              "Thương hiệu".text.white.fontFamily(semibold).make(),
                               5.heightBox,
                               "${widget.data['p_seller']}".text.fontFamily(semibold).color(darkFontGrey).size(16).make()
                             ],
@@ -117,7 +117,7 @@ class _ItemDetailsState extends State<ItemDetails> {
                           ),
                         ],
                       ).box.height(60).padding(const EdgeInsets.symmetric(horizontal: 16)).color(textfieldGrey).make(),
-        
+
                       //color section
                       20.heightBox,
                       Obx(
@@ -162,7 +162,7 @@ class _ItemDetailsState extends State<ItemDetails> {
                                   )
                                 ],
                               ).box.padding(const EdgeInsets.all(8)).make(),
-        
+
                             // SIZE
                             if (widget.data['p_sizes'] != null && widget.data['p_sizes'].isNotEmpty)
                               Row(
@@ -194,7 +194,7 @@ class _ItemDetailsState extends State<ItemDetails> {
                                   )
                                 ],
                               ).box.padding(const EdgeInsets.all(8)).make(),
-        
+
                             // QUANTITY
                             Row(
                               children: [
@@ -229,7 +229,7 @@ class _ItemDetailsState extends State<ItemDetails> {
                                 )
                               ],
                             ).box.padding(const EdgeInsets.all(8)).make(),
-        
+
                             // TOTAL
                             Row(
                               children: [
@@ -249,19 +249,19 @@ class _ItemDetailsState extends State<ItemDetails> {
                           ],
                         ).box.white.shadowSm.make(),
                       ),
-        
-        
+
+
                       //description section
-        
+
                       10.heightBox,
-        
+
                       "Mô tả".text.color(darkFontGrey).fontFamily(semibold).make(),
                       10.heightBox,
                       "${widget.data['p_desc']}".text.color(darkFontGrey).make(),
-        
+
                       //buttons section
                       10.heightBox,
-        
+
                       ListView(
                         physics: const NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
@@ -269,14 +269,14 @@ class _ItemDetailsState extends State<ItemDetails> {
                             itemDetailButtonList.length, (index) => ListTile(
                           title: itemDetailButtonList[index].text.fontFamily(semibold).color(darkFontGrey).make(),
                           trailing: const Icon(Icons.arrow_forward),
-        
+
                         )
                         ),
                       ),
                       20.heightBox,
-        
+
                       //products may like section
-        
+
                       productsYouMayLike.text.fontFamily(bold).size(16).color(darkFontGrey).make(),
                       10.heightBox,
                       SingleChildScrollView(
@@ -298,12 +298,12 @@ class _ItemDetailsState extends State<ItemDetails> {
                           ).box.white.margin(const EdgeInsets.symmetric(horizontal: 4)).roundedSM.padding(const EdgeInsets.all(8)).make()),
                         ),
                       )
-        
+
                     ],
                   ),
                 ),),
-        
-        
+
+
             ),
             SizedBox(
               width: double.infinity,
@@ -321,6 +321,7 @@ class _ItemDetailsState extends State<ItemDetails> {
                       size: hasSize ? widget.data['p_sizes'][controller.sizeIndex.value] : '',
                       price: widget.data['p_price'],
                       context: context,
+                      vendorID: widget.data['vendor_id'],
                       img: widget.data['p_imgs'][0],
                       qty: controller.quantity.value,
                       sellername: widget.data['p_seller'],

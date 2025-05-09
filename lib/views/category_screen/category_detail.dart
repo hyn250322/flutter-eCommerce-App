@@ -25,9 +25,14 @@ class _CategoryDetailState extends State<CategoryDetail> {
   }
 
   switchCategory(title) {
-    if (controller.subcat.contains(title)) {
+    if (title == "Tất cả") {
+      // Use the parent category name, not "Tất cả"
+      productMethod = FirestoreServices.getProducts(widget.title);
+    } else if (controller.subcat.contains(title)) {
+      // Subcategory products
       productMethod = FirestoreServices.getSubCategoryProducts(title);
     } else {
+      // Category products
       productMethod = FirestoreServices.getProducts(title);
     }
   }

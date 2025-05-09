@@ -3,73 +3,70 @@
     {
       "name": "Thời trang nữ",
       "subcategory": [
-        "Đầm",
-        "Áo thun",
+        "Tất cả",
+        "Áo thun nữ",
+        "Áo sơ mi nữ",
+        "Áo giữ nhiệt nữ",
         "Set đồ nữ",
-        "Váy"
+        "Đầm nữ",
+        "Chân váy nữ"
       ]
     },
     {
       "name": "Thời trang nam",
       "subcategory": [
+        "Tất cả",
         "Áo khoác & Jacket",
-        "Đồ công sở",
-        "Phụ kiện"
+        "Áo sơ mi nam",
+        "Áo thun nam",
+        "Quần dài nam",
+        "Quần nỉ nam",
+        "Đồ công sở"
       ]
     },
     {
-      "name": "Máy tính & Phụ kiện",
+      "name": "Thời trang trẻ em",
       "subcategory": [
-        "Laptop",
-        "Máy tính chơi game",
-        "Thiết bị văn phòng"
-      ]
-    },
-    {
-      "name": "Ô tô & Phương tiện",
-      "subcategory": [
-        "Ô tô",
-        "Xe máy"
-      ]
-    },
-    {
-      "name": "Đồ chơi & Trẻ em",
-      "subcategory": [
-        "Giày & Túi",
+        "Tất cả",
         "Quần áo em bé",
-        "Đồ chơi bé gái"
+        "Áo trẻ em",
+        "Set đồ trẻ em",
+        "Quần trẻ em"
       ]
     },
     {
-      "name": "Thể thao",
+      "name": "Thời trang trung niên",
       "subcategory": [
-        "Xe đạp",
-        "Giày thể thao",
-        "Bơi lội"
+        "Tất cả",
+        "Đầm trung niên",
+        "Set đồ trung niên"
       ]
     },
     {
       "name": "Trang sức",
       "subcategory": [
+        "Tất cả",
         "Vòng cổ",
         "Vàng",
         "Bông tai"
       ]
     },
     {
-      "name": "Điện thoại & Máy tính bảng",
+      "name": "Phụ kiện nam",
       "subcategory": [
-        "Điện thoại thông minh",
-        "Máy tính bảng",
-        "Phụ kiện"
+        "Tất cả",
+        "Đồng hồ nam",
+        "Giày nam",
+        "Mũ nam"
       ]
     },
     {
-      "name": "Nội thất",
+      "name": "Phụ kiện nữ",
       "subcategory": [
-        "Ghế sofa",
-        "Giường ngủ",
-        "Vải & Trang trí nhà cửa"
+        "Tất cả",
+        "Đồng hồ nữ",
+        "Giày nữ",
+        "Túi xách"
       ]
     }
   ]

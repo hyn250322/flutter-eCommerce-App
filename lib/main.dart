@@ -21,9 +21,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.transparent,
         appBarTheme: const AppBarTheme(
-          iconTheme: IconThemeData(
-            color: darkFontGrey
-          ),
+            iconTheme: IconThemeData(
+                color: darkFontGrey
+            ),
             elevation: 0.0,
             backgroundColor: Colors.transparent
         ),

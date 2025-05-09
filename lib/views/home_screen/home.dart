@@ -15,6 +15,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var controller = Get.put(HomeController());
+    controller.fetchUsername(currentUser!.uid);
 
     var navBarItem = [
       BottomNavigationBarItem(icon: Image.asset(icHome, width: 26), label: home),

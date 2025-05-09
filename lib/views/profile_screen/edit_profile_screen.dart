@@ -67,7 +67,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     controller.changeImage(context);
                   },
                   textColor: whiteColor,
-                  title: "Change",
+                  title: "Thay đổi",
                 ),
                 const Divider(),
                 20.heightBox,
@@ -100,38 +100,55 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     onPress: () async {
                       controller.isloading(true);
 
-                      if (controller.profileImgPath.value.isNotEmpty) {
-                        await controller.uploadProfileImage();
-                      } else {
-                        controller.profileImageLink = userData?['imageUrl'] ?? '';
-                      }
+                      try {
+                        // Nếu có chọn ảnh mới thì upload, còn không thì giữ link cũ
+                        if (controller.profileImgPath.value.isNotEmpty) {
+                          await controller.uploadProfileImage();
+                        } else {
+                          controller.profileImageLink = userData?['imageUrl'] ?? '';
+                        }
 
-                      // So sánh mật khẩu cũ
-                      if (userData?['password'] == controller.oldpassController.text) {
-                        await controller.changeAuthPassword(
-                            email: userData?['email'],
-                            password: controller.oldpassController.text,
-                            newpassword: controller.newpassController.text
-                        );
+                        // Nếu người dùng nhập mật khẩu cũ và mới thì thực hiện đổi mật khẩu
+                        if (controller.oldpassController.text.isNotEmpty &&
+                            controller.newpassController.text.isNotEmpty) {
+                          if (userData?['password'] == controller.oldpassController.text) {
+                            await controller.changeAuthPassword(
+                              email: userData?['email'],
+                              password: controller.oldpassController.text,
+                              newpassword: controller.newpassController.text,
+                            );
+                            // Có đổi mật khẩu => cập nhật profile có thêm password
+                            await controller.updateProfile(
+                              name: controller.nameController.text,
+                              imgUrl: controller.profileImageLink,
+                              password: controller.newpassController.text,
+                            );
+                          } else {
+                            VxToast.show(context, msg: "Sai mật khẩu cũ");
+                            controller.isloading(false);
+                            return;
+                          }
+                        } else {
+                          // Không đổi mật khẩu
+                          await controller.updateProfile(
+                            name: controller.nameController.text,
+                            imgUrl: controller.profileImageLink,
+                          );
+                        }
 
-                        await controller.updateProfile(
-                          imgUrl: controller.profileImageLink,
-                          name: controller.nameController.text,
-                          password: controller.newpassController.text,
-                        );
-
-                        VxToast.show(context, msg: "Updated");
-                      } else {
-                        VxToast.show(context, msg: "Wrong old password");
+                        VxToast.show(context, msg: "Cập nhật thành công");
+                        fetchUserData(); // Reload lại dữ liệu
+                        controller.profileImgPath.value = '';
+                      } catch (e) {
+                        VxToast.show(context, msg: "Lỗi: ${e.toString()}");
+                      } finally {
                         controller.isloading(false);
                       }
-
-                      fetchUserData();
-                      controller.profileImgPath.value = '';
                     },
 
+
                     textColor: whiteColor,
-                    title: "Save",
+                    title: "Lưu",
                   ),
                 ),
               ],
