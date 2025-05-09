@@ -68,9 +68,6 @@ class AuthController extends GetxController {
           'email': email,
           'imageUrl': "",
           'id': currentUser!.uid,
-          'cart_count': "00",
-          'wishlist_count': "00",
-          'order_count': "00"
         });
       } else {
         print("Không thể lưu dữ liệu: currentUser là null");

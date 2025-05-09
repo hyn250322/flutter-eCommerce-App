@@ -116,28 +116,31 @@ class _SignupScreenState extends State<SignupScreen> {
 
                             controller.isloading(true);
                             try {
-                              await controller
-                                  .signupMethod(
+                              final userCredential = await controller.signupMethod(
                                 context: context,
                                 email: emailController.text,
                                 password: passwordController.text,
-                              )
-                                  .then((value) {
-                                return controller.storeUserData(
+                              );
+
+                              if (userCredential != null) {
+                                await controller.storeUserData(
                                   email: emailController.text,
                                   password: passwordController.text,
                                   name: nameController.text,
                                 );
-                              }).then((value) {
+
                                 controller.isloading(false);
                                 VxToast.show(context, msg: loggedin);
                                 Get.offAll(() => Home());
-                              });
+                              } else {
+                                controller.isloading(false);
+                                VxToast.show(context, msg: "Đăng ký thất bại");
+                              }
                             } catch (e) {
                               controller.isloading(false);
-                              // auth.signOut();
                               VxToast.show(context, msg: e.toString());
                             }
+
                           } else {
                             VxToast.show(context, msg: "Bạn phải đồng ý với điều khoản.");
                           }
